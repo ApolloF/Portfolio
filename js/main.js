@@ -290,12 +290,14 @@ function initLanguageToggle() {
   const storedLanguage = getStoredLanguage();
   setLanguage(storedLanguage || DEFAULT_LANGUAGE, { persist: false });
 
-  document.querySelectorAll('.language-toggle__option').forEach(button => {
-    button.addEventListener('click', () => {
-      const lang = button.getAttribute('data-lang');
-      setLanguage(lang);
-      restartTypingEffect();
-    });
+  document.addEventListener('click', event => {
+    const button = event.target.closest('.language-toggle__option');
+    if (!button) return;
+
+    event.preventDefault();
+    const lang = button.getAttribute('data-lang');
+    setLanguage(lang);
+    restartTypingEffect();
   });
 }
 

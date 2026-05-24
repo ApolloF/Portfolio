@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260525">
 </head>
 <body>
 
@@ -46,6 +46,10 @@
         <div class="profile-subtitle">
           <span class="typing-text" id="typingText"></span>
           <span class="typing-cursor">|</span>
+        </div>
+        <div class="language-toggle" role="group" aria-label="Taal kiezen" data-i18n-attr="aria-label:language.group">
+          <button class="language-toggle__option active" type="button" data-lang="nl" aria-pressed="true">NL</button>
+          <button class="language-toggle__option" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
 
@@ -82,10 +86,6 @@
       </div>
 
       <div class="sidebar__actions">
-        <div class="language-toggle" role="group" aria-label="Taal kiezen" data-i18n-attr="aria-label:language.group">
-          <button class="language-toggle__option active" type="button" data-lang="nl" aria-pressed="true">NL</button>
-          <button class="language-toggle__option" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
         <a href="#contact" class="sidebar__cta">
           <span data-i18n="cta.contact">Contact</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
@@ -515,6 +515,6 @@
 
   </main>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260525"></script>
 </body>
 </html>
