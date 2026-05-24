@@ -39,7 +39,7 @@
     <div class="sidebar__content">
       <div class="sidebar__profile">
         <div class="profile-photo-wrapper">
-          <img src="img/profile.jpg" alt="Florian Greeven" class="profile-photo" id="profilePhoto">
+          <img src="img/profile-photo.jpeg" alt="Florian Greeven" class="profile-photo" id="profilePhoto">
           <div class="profile-photo-ring"></div>
         </div>
         <h1 class="profile-name">Florian Greeven</h1>
@@ -106,6 +106,7 @@
           <p>Maker, builder, tinkerer. I'm Florian — a creative technologist currently pursuing a <strong>Bachelor's in Business Administration</strong> at the <strong>University of Groningen</strong>.</p>
           <p>I thrive at the intersection of digital and physical making. Whether it's designing and 3D printing custom sim racing pedals with Arduino-based load cells, managing self-hosted server infrastructure, or building things with wood and metal — I'm driven by the satisfaction of turning concepts into working reality.</p>
           <p>With hands-on experience in 3D printing, CAD design, electronics, and system administration, I bring a unique blend of technical skill and practical problem-solving to every project.</p>
+          <p>I speak Dutch natively, plus German and English, shaped by studying in the Netherlands and having lived in Germany.</p>
         </div>
         <div class="about-details reveal reveal-up" style="--delay: 0.15s">
           <div class="detail-card">
@@ -115,6 +116,15 @@
             <div class="detail-card__content">
               <span class="detail-card__label">Location</span>
               <span class="detail-card__value">Groningen, NL</span>
+            </div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 010 20"/><path d="M12 2a15.3 15.3 0 000 20"/></svg>
+            </div>
+            <div class="detail-card__content">
+              <span class="detail-card__label">Languages</span>
+              <span class="detail-card__value">Dutch, German, English</span>
             </div>
           </div>
           <div class="detail-card">
@@ -157,7 +167,12 @@
               <div class="skill-bar" data-skill="3D Printing (FDM & Resin)" data-level="90"></div>
               <div class="skill-bar" data-skill="CAD Design" data-level="72"></div>
               <div class="skill-bar" data-skill="Rapid Prototyping" data-level="85"></div>
+              <div class="skill-bar" data-skill="Laser Cutting" data-level="70"></div>
             </div>
+            <figure class="skill-tools">
+              <img src="img/fabrication-3d-printer.jpg" alt="3D printer in the workshop" class="skill-tools__image">
+              <img src="img/fabrication-laser-cutter.png" alt="Laser cutter in the workshop" class="skill-tools__image">
+            </figure>
           </div>
           <!-- Electronics -->
           <div class="skill-category reveal reveal-up" style="--delay: 0.1s">
@@ -195,6 +210,19 @@
               <div class="skill-bar" data-skill="VR Technologies" data-level="65"></div>
             </div>
           </div>
+          <!-- Operations & Business -->
+          <div class="skill-category reveal reveal-up" style="--delay: 0.4s">
+            <h3 class="skill-category__title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M3 21h18"/><path d="M3 7h18"/><path d="M5 7v14"/><path d="M19 7v14"/><path d="M8 7V3h8v4"/><path d="M9 12h2"/><path d="M13 12h2"/><path d="M9 16h2"/><path d="M13 16h2"/></svg>
+              Operations & Business
+            </h3>
+            <div class="skill-bars">
+              <div class="skill-bar" data-skill="Hospitality Operations" data-level="82"></div>
+              <div class="skill-bar" data-skill="Guest Services" data-level="78"></div>
+              <div class="skill-bar" data-skill="Bookkeeping & Administration" data-level="80"></div>
+              <div class="skill-bar" data-skill="Financial Planning" data-level="70"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -217,6 +245,11 @@
             </div>
             <h3 class="project-card__title">Custom Sim Racing Pedals</h3>
             <p class="project-card__desc">Designed and fabricated custom load-cell brake pedals for sim racing. Full lifecycle from CAD modeling through 3D printing to Arduino electronics integration with load cell sensors and custom firmware.</p>
+            <figure class="project-card__media project-card__media--mosaic">
+              <img src="img/sim-pedals-full.jpg" alt="Complete custom sim racing pedal assembly" class="project-card__image project-card__image--wide">
+              <img src="img/sim-pedals-electronics.jpg" alt="Arduino electronics and custom 3D-printed enclosure for sim racing pedals" class="project-card__image">
+              <img src="img/sim-pedals-mechanics.jpg" alt="Spring and load-cell mechanism on custom sim racing pedals" class="project-card__image">
+            </figure>
             <div class="project-card__tags">
               <span class="tag">3D Printing</span>
               <span class="tag">CAD</span>
@@ -233,7 +266,10 @@
               <span class="project-card__number">02</span>
             </div>
             <h3 class="project-card__title">Homelab Infrastructure</h3>
-            <p class="project-card__desc">Built and maintain comprehensive server infrastructure across two locations. Self-hosted services for media, development, surveillance, home automation, and personal web applications — all running on Docker.</p>
+            <p class="project-card__desc">Built and maintain comprehensive server infrastructure across two locations with Proxmox virtualization and Docker-based services. Self-hosted media, development, surveillance, personal web applications, and a Home Assistant-powered home.</p>
+            <figure class="project-card__media">
+              <img src="img/homelab-proxmox.png" alt="Proxmox dashboard showing homelab virtual machines and containers" class="project-card__image">
+            </figure>
             <div class="project-card__tags">
               <span class="tag">Linux</span>
               <span class="tag">Docker</span>
@@ -251,6 +287,9 @@
             </div>
             <h3 class="project-card__title">AI Surveillance System</h3>
             <p class="project-card__desc">Deployed Frigate NVR with YOLOv5 AI-powered object detection for real-time security monitoring. Multi-camera setup with intelligent alerts and event recording across the homelab network.</p>
+            <figure class="project-card__media">
+              <img src="img/ai-surveillance-nvr.png" alt="AI surveillance camera feed detecting a person at night" class="project-card__image">
+            </figure>
             <div class="project-card__tags">
               <span class="tag">AI / YOLOv5</span>
               <span class="tag">Frigate</span>
@@ -267,7 +306,10 @@
               <span class="project-card__number">04</span>
             </div>
             <h3 class="project-card__title">bGrid Demo Kit</h3>
-            <p class="project-card__desc">Developed a portable demonstration kit for bGrid's indoor positioning and smart building technology. Designed for showcasing IoT capabilities to potential clients and stakeholders.</p>
+            <p class="project-card__desc">Developed a portable demonstration kit for bGrid's indoor positioning and smart building technology. Created custom CAD prototypes using laser cutting and 3D printing for client and stakeholder demos.</p>
+            <figure class="project-card__media">
+              <img src="img/bgrid-demo.jpg" alt="bGrid demo kit with laser-cut enclosure and electronics" class="project-card__image">
+            </figure>
             <div class="project-card__tags">
               <span class="tag">IoT</span>
               <span class="tag">Electronics</span>
@@ -276,14 +318,40 @@
           </article>
 
           <article class="project-card reveal reveal-up" style="--delay: 0.4s">
+            <div class="project-card__header" style="--accent: #7fbf7a">
+              <div class="project-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 22s7-4.35 7-11a7 7 0 10-14 0c0 6.65 7 11 7 11z"/><path d="M12 14c2.5-2.5 4-5 4-9"/><path d="M12 14c-2.5-2.5-4-5-4-9"/></svg>
+              </div>
+              <span class="project-card__number">05</span>
+            </div>
+            <h3 class="project-card__title">Stress-Responsive Plant Watering</h3>
+            <p class="project-card__desc">Built an interactive plant watering prototype that reacted to electronically measured user stress levels. Combined Arduino sensing, custom code, 3D-printed housings, and physical prototyping to turn biometric input into a playful automated watering system.</p>
+            <figure class="project-card__media project-card__media--split">
+              <img src="img/stress-plant-01.jpg" alt="Stress-responsive plant watering prototype with Arduino electronics" class="project-card__image">
+              <img src="img/stress-plant-02.jpg" alt="Plant watering prototype with 3D-printed parts and plant" class="project-card__image">
+            </figure>
+            <div class="project-card__tags">
+              <span class="tag">Arduino</span>
+              <span class="tag">3D Printing</span>
+              <span class="tag">Sensors</span>
+              <span class="tag">Prototyping</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-up" style="--delay: 0.5s">
             <div class="project-card__header" style="--accent: #c678dd">
               <div class="project-card__icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
               </div>
-              <span class="project-card__number">05</span>
+              <span class="project-card__number">06</span>
             </div>
             <h3 class="project-card__title">Woodworking & Construction</h3>
             <p class="project-card__desc">Various woodworking and construction projects ranging from custom furniture pieces to structural builds. Combining traditional craftsmanship with modern design and precision tools.</p>
+            <figure class="project-card__media project-card__media--triptych">
+              <img src="img/wood-workshop.jpg" alt="Finished woodworking workshop with benches and tools" class="project-card__image">
+              <img src="img/wood-shed.jpg" alt="Timber shed and covered outdoor structure under construction" class="project-card__image">
+              <img src="img/wood-table-finish.jpg" alt="Finishing a custom live-edge wooden table" class="project-card__image">
+            </figure>
             <div class="project-card__tags">
               <span class="tag">Woodworking</span>
               <span class="tag">Design</span>
@@ -360,6 +428,15 @@
               <span class="timeline__date">Previous</span>
               <h3 class="timeline__title">Creative Technology</h3>
               <span class="timeline__company">University of Twente</span>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal reveal-up" style="--delay: 0.45s">
+            <div class="timeline__dot timeline__dot--education"></div>
+            <div class="timeline__card">
+              <span class="timeline__date">Previous</span>
+              <h3 class="timeline__title">VWO N&amp;T, Economics &amp; Informatics</h3>
+              <span class="timeline__company">Vitus College, Bussum</span>
             </div>
           </div>
         </div>
