@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initScrollReveal();
-  initSkillBars();
   initNavigation();
   initCustomCursor();
   initMobileMenu();
@@ -16,10 +15,10 @@ function initTypingEffect() {
   if (!el) return;
 
   const phrases = [
-    'Creative Technologist',
+    'Maker & Builder',
     'System Administrator',
-    '3D Print Enthusiast',
-    'Maker & Builder'
+    'Business Student',
+    '3D Print Enthusiast'
   ];
 
   let phraseIdx = 0, charIdx = 0, isDeleting = false;
@@ -64,45 +63,6 @@ function initScrollReveal() {
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   reveals.forEach(el => observer.observe(el));
-}
-
-/* ===== Skill Bars ===== */
-function initSkillBars() {
-  document.querySelectorAll('.skill-bar').forEach(bar => {
-    const level = bar.getAttribute('data-level');
-    const skill = bar.getAttribute('data-skill');
-
-    // Create inner elements
-    const fill = document.createElement('div');
-    fill.className = 'skill-bar__fill';
-    bar.appendChild(fill);
-
-    const pct = document.createElement('span');
-    pct.className = 'skill-bar__pct';
-    pct.textContent = level + '%';
-    bar.appendChild(pct);
-
-    // Update the before pseudo content to include percentage
-    bar.style.setProperty('--skill-name', `"${skill}"`);
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fill = entry.target.querySelector('.skill-bar__fill');
-        const level = entry.target.getAttribute('data-level');
-        if (fill) {
-          setTimeout(() => {
-            fill.style.width = level + '%';
-            entry.target.classList.add('animated');
-          }, 200);
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.skill-bar').forEach(bar => observer.observe(bar));
 }
 
 /* ===== Navigation Active State ===== */

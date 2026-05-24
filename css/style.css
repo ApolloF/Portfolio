@@ -262,26 +262,30 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--text-primary);
 }
 .skill-category__title svg { color: var(--accent); }
-.skill-bars { display: flex; flex-direction: column; gap: 16px; }
-.skill-bar { position: relative; }
-.skill-bar::before {
-  content: attr(data-skill); display: flex; justify-content: space-between;
-  font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 6px;
+.skill-list { display: flex; flex-direction: column; gap: 10px; }
+.skill-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 42px; padding: 10px 12px; border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.045);
+  color: var(--text-secondary); font-size: 0.8rem;
 }
-.skill-bar::after {
-  content: ''; display: block; height: 4px; background: rgba(255,255,255,0.06);
-  border-radius: 2px; overflow: hidden;
+.skill-level {
+  flex-shrink: 0; padding: 3px 8px; border-radius: 4px;
+  font-size: 0.66rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; border: 1px solid transparent;
 }
-.skill-bar .skill-bar__fill {
-  position: absolute; bottom: 0; left: 0; height: 4px; border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), #e8c570);
-  width: 0; transition: width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);
+.skill-level--strong {
+  color: var(--accent); background: var(--accent-dim); border-color: rgba(212,162,78,0.18);
 }
-.skill-bar .skill-bar__pct {
-  position: absolute; top: 0; right: 0; font-size: 0.72rem; color: var(--accent);
-  font-weight: 600; opacity: 0; transition: opacity 0.5s 0.8s;
+.skill-level--experienced {
+  color: #8fc4ff; background: rgba(91,155,213,0.12); border-color: rgba(91,155,213,0.22);
 }
-.skill-bar.animated .skill-bar__pct { opacity: 1; }
+.skill-level--hands-on {
+  color: #8fc4ff; background: rgba(91,155,213,0.12); border-color: rgba(91,155,213,0.22);
+}
+.skill-level--functional {
+  color: #b9b9c8; background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.08);
+}
 .skill-tools {
   display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 18px;
   border: 1px solid var(--border); border-radius: var(--radius-sm);
