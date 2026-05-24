@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initCustomCursor();
   initMobileMenu();
+  initImageLightbox();
 });
 
 /* ===== Typing Effect ===== */
@@ -169,7 +170,7 @@ function initCustomCursor() {
   animateFollower();
 
   // Hover effect on interactive elements
-  const hoverTargets = document.querySelectorAll('a, button, .project-card, .detail-card, .skill-category');
+  const hoverTargets = document.querySelectorAll('a, button, .project-card, .detail-card, .skill-category, .project-card__image, .skill-tools__image, .profile-photo');
   hoverTargets.forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursor.classList.add('hovering');
@@ -201,4 +202,72 @@ function initMobileMenu() {
 
   toggle.addEventListener('click', toggleMenu);
   backdrop.addEventListener('click', toggleMenu);
+}
+
+/* ===== Image Lightbox ===== */
+function initImageLightbox() {
+  const images = document.querySelectorAll('.project-card__image, .skill-tools__image, .profile-photo');
+  if (!images.length) return;
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'image-lightbox';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Enlarged image');
+  lightbox.innerHTML = `
+    <button class="image-lightbox__close" type="button" aria-label="Close enlarged image">&times;</button>
+    <div class="image-lightbox__dialog">
+      <img class="image-lightbox__image" alt="">
+      <p class="image-lightbox__caption"></p>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector('.image-lightbox__image');
+  const caption = lightbox.querySelector('.image-lightbox__caption');
+  const closeBtn = lightbox.querySelector('.image-lightbox__close');
+  let lastFocused = null;
+
+  function openImage(img) {
+    lastFocused = document.activeElement;
+    lightboxImage.src = img.currentSrc || img.src;
+    lightboxImage.alt = img.alt || 'Portfolio image';
+    caption.textContent = img.alt || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeImage() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    lightboxImage.removeAttribute('src');
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
+  }
+
+  images.forEach(img => {
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('aria-label', `Enlarge image: ${img.alt || 'portfolio image'}`);
+
+    img.addEventListener('click', () => openImage(img));
+    img.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openImage(img);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeImage);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeImage();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeImage();
+    }
+  });
 }
