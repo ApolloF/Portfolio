@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Florian Greeven — Practical Maker & Systems Builder</title>
-  <meta name="description" content="Portfolio of Florian Greeven — practical maker, systems builder, and business administration student based in Groningen, NL. Projects in 3D printing, electronics, infrastructure, and fabrication.">
+  <title>Florian Greeven - Praktische maker & systeembeheerder</title>
+  <meta name="description" content="Portfolio van Florian Greeven - praktische maker, systeembeheerder en student Bedrijfskunde in Groningen. Projecten in 3D-printen, elektronica, infrastructuur en fabricage.">
   <meta name="author" content="Florian Greeven">
-  <meta property="og:title" content="Florian Greeven — Practical Maker & Systems Builder">
-  <meta property="og:description" content="Portfolio of Florian Greeven — 3D printing, CAD design, electronics, infrastructure, and hands-on fabrication.">
+  <meta property="og:title" content="Florian Greeven - Praktische maker & systeembeheerder">
+  <meta property="og:description" content="Portfolio van Florian Greeven - 3D-printen, CAD-ontwerp, elektronica, infrastructuur en praktische fabricage.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://portfolio.apollof.nl">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
   <!-- Mobile Header -->
   <header class="mobile-header" id="mobileHeader">
     <span class="mobile-header__name">Florian Greeven</span>
-    <button class="mobile-header__toggle" id="menuToggle" aria-label="Toggle menu">
+    <button class="mobile-header__toggle" id="menuToggle" aria-label="Menu openen" data-i18n-attr="aria-label:menu.toggle">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -52,23 +52,23 @@
       <nav class="sidebar__nav" id="sidebarNav">
         <a href="#about" class="nav-link active" data-section="about">
           <span class="nav-link__indicator"></span>
-          <span class="nav-link__text">About</span>
+          <span class="nav-link__text" data-i18n="nav.about">Over mij</span>
         </a>
         <a href="#skills" class="nav-link" data-section="skills">
           <span class="nav-link__indicator"></span>
-          <span class="nav-link__text">Capabilities</span>
+          <span class="nav-link__text" data-i18n="nav.skills">Vaardigheden</span>
         </a>
         <a href="#projects" class="nav-link" data-section="projects">
           <span class="nav-link__indicator"></span>
-          <span class="nav-link__text">Projects</span>
+          <span class="nav-link__text" data-i18n="nav.projects">Projecten</span>
         </a>
         <a href="#experience" class="nav-link" data-section="experience">
           <span class="nav-link__indicator"></span>
-          <span class="nav-link__text">Experience</span>
+          <span class="nav-link__text" data-i18n="nav.experience">Ervaring</span>
         </a>
         <a href="#contact" class="nav-link" data-section="contact">
           <span class="nav-link__indicator"></span>
-          <span class="nav-link__text">Contact</span>
+          <span class="nav-link__text" data-i18n="nav.contact">Contact</span>
         </a>
       </nav>
 
@@ -76,18 +76,22 @@
         <a href="https://www.linkedin.com/in/florian-greeven-808571245/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="mailto:me@apollof.nl" class="social-link" aria-label="Email">
+        <a href="mailto:me@apollof.nl" class="social-link" aria-label="E-mail" data-i18n-attr="aria-label:contact.emailLabel">
           <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
 
       <div class="sidebar__actions">
+        <div class="language-toggle" role="group" aria-label="Taal kiezen" data-i18n-attr="aria-label:language.group">
+          <button class="language-toggle__option active" type="button" data-lang="nl" aria-pressed="true">NL</button>
+          <button class="language-toggle__option" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
         <a href="#contact" class="sidebar__cta">
-          <span>Contact Me</span>
+          <span data-i18n="cta.contact">Contact</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
         </a>
-        <a href="docs/CV_Florian_Greeven.pdf" class="sidebar__cta sidebar__cta--secondary" target="_blank" rel="noopener">
-          <span>View CV</span>
+        <a href="docs/CV_Florian_Greeven_Webversion.pdf" class="sidebar__cta sidebar__cta--secondary" target="_blank" rel="noopener">
+          <span data-i18n="cta.cv">Bekijk CV</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg>
         </a>
       </div>
@@ -104,27 +108,27 @@
     <!-- About Section -->
     <section class="section" id="about">
       <div class="section__header reveal reveal-up">
-        <h2 class="section__title">About Me</h2>
+        <h2 class="section__title" data-i18n="about.title">Over mij</h2>
         <div class="section__title-line"></div>
       </div>
       <div class="section__body">
         <div class="about-text reveal reveal-up">
-          <p>I'm Florian, a Dutch maker and systems builder currently pursuing a <strong>Bachelor's in Business Administration</strong> at the <strong>University of Groningen</strong>.</p>
-          <p>I thrive at the intersection of digital and physical making. Whether it's designing and 3D printing custom sim racing pedals with Arduino-based load cells, managing self-hosted server infrastructure, or building things with wood and metal — I'm driven by the satisfaction of turning concepts into working reality.</p>
-          <p>With hands-on experience in 3D printing, CAD design, electronics, system administration, and business operations, I bring a practical mix of technical skill, ownership, and problem-solving to every project.</p>
-          <p>I am Dutch and speak Dutch, German, and English, shaped by studying in the Netherlands and having lived in Germany.</p>
-          <div class="about-highlights" aria-label="Portfolio highlights">
+          <p data-i18n-html="about.p1">Ik ben Florian, een Nederlandse maker en systeembeheerder die momenteel <strong>Bedrijfskunde</strong> studeert aan de <strong>Rijksuniversiteit Groningen</strong>.</p>
+          <p data-i18n="about.p2">Ik werk graag op het snijvlak van digitaal en fysiek maken. Of het nu gaat om custom simracingpedalen ontwerpen en 3D-printen met Arduino-gebaseerde load cells, self-hosted serverinfrastructuur beheren, of bouwen met hout en metaal: ik haal energie uit ideeen omzetten in werkende realiteit.</p>
+          <p data-i18n="about.p3">Met praktische ervaring in 3D-printen, CAD-ontwerp, elektronica, systeembeheer en bedrijfsvoering breng ik een nuchtere mix van technische vaardigheid, eigenaarschap en probleemoplossend vermogen mee.</p>
+          <p data-i18n="about.p4">Ik ben Nederlands en spreek Nederlands, Duits en Engels. Ik heb in Duitsland gewoond en in Nederland gestudeerd.</p>
+          <div class="about-highlights" aria-label="Portfolio highlights" data-i18n-attr="aria-label:about.highlightsLabel">
             <div class="about-highlight">
-              <span class="about-highlight__value">End-to-end</span>
-              <span class="about-highlight__label">Prototyping from CAD to working hardware</span>
+              <span class="about-highlight__value" data-i18n="about.highlight1.title">Van idee tot werkend prototype</span>
+              <span class="about-highlight__label" data-i18n="about.highlight1.text">Prototyping van CAD naar werkende hardware</span>
             </div>
             <div class="about-highlight">
-              <span class="about-highlight__value">Always-on</span>
-              <span class="about-highlight__label">Homelab, Docker services, and Home Assistant</span>
+              <span class="about-highlight__value" data-i18n="about.highlight2.title">Altijd draaiend</span>
+              <span class="about-highlight__label" data-i18n="about.highlight2.text">Homelab, Docker-services en Home Assistant</span>
             </div>
             <div class="about-highlight">
-              <span class="about-highlight__value">Operations</span>
-              <span class="about-highlight__label">Bookkeeping, hospitality, and admin ownership</span>
+              <span class="about-highlight__value" data-i18n="about.highlight3.title">Bedrijfsvoering</span>
+              <span class="about-highlight__label" data-i18n="about.highlight3.text">Boekhouding, hospitality en administratie</span>
             </div>
           </div>
         </div>
@@ -134,7 +138,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div class="detail-card__content">
-              <span class="detail-card__label">Location</span>
+              <span class="detail-card__label" data-i18n="details.location.label">Locatie</span>
               <span class="detail-card__value">Groningen, NL</span>
             </div>
           </div>
@@ -143,8 +147,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 010 20"/><path d="M12 2a15.3 15.3 0 000 20"/></svg>
             </div>
             <div class="detail-card__content">
-              <span class="detail-card__label">Languages</span>
-              <span class="detail-card__value">Dutch, German, English</span>
+              <span class="detail-card__label" data-i18n="details.languages.label">Talen</span>
+              <span class="detail-card__value" data-i18n="details.languages.value">Nederlands, Duits, Engels</span>
             </div>
           </div>
           <div class="detail-card">
@@ -152,8 +156,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 10 3 12 0v-5"/></svg>
             </div>
             <div class="detail-card__content">
-              <span class="detail-card__label">Education</span>
-              <span class="detail-card__value">Business Administration, RUG</span>
+              <span class="detail-card__label" data-i18n="details.education.label">Opleiding</span>
+              <span class="detail-card__value" data-i18n="details.education.value">Bedrijfskunde, RUG</span>
             </div>
           </div>
           <div class="detail-card">
@@ -161,7 +165,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
             </div>
             <div class="detail-card__content">
-              <span class="detail-card__label">Email</span>
+              <span class="detail-card__label" data-i18n="details.email.label">E-mail</span>
               <a href="mailto:me@apollof.nl" class="detail-card__value detail-card__value--link">me@apollof.nl</a>
             </div>
           </div>
@@ -172,7 +176,7 @@
     <!-- Skills Section -->
     <section class="section" id="skills">
       <div class="section__header reveal reveal-up">
-        <h2 class="section__title">Capabilities</h2>
+        <h2 class="section__title" data-i18n="skills.title">Vaardigheden</h2>
         <div class="section__title-line"></div>
       </div>
       <div class="section__body">
@@ -181,66 +185,66 @@
           <div class="skill-category reveal reveal-up">
             <h3 class="skill-category__title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              Digital Fabrication
+              <span data-i18n="skills.fabrication.title">Digitale fabricage</span>
             </h3>
             <div class="skill-list">
-              <div class="skill-item"><span>3D Printing (FDM)</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>Rapid Prototyping</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>CAD Design</span><span class="skill-level skill-level--functional">Functional Parts</span></div>
-              <div class="skill-item"><span>Laser Cutting</span><span class="skill-level skill-level--hands-on">Hands-on</span></div>
+              <div class="skill-item"><span data-i18n="skills.fabrication.printing">3D-printen (FDM)</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.fabrication.prototyping">Rapid prototyping</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.fabrication.cad">CAD-ontwerp</span><span class="skill-level skill-level--functional" data-i18n="level.functional">Functionele onderdelen</span></div>
+              <div class="skill-item"><span data-i18n="skills.fabrication.laser">Lasersnijden</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
             </div>
             <figure class="skill-tools">
-              <img src="img/fabrication-3d-printer.jpg" alt="3D printer in the workshop" class="skill-tools__image">
-              <img src="img/fabrication-laser-cutter.png" alt="Laser cutter in the workshop" class="skill-tools__image">
+              <img src="img/fabrication-3d-printer.jpg" alt="3D-printer in de werkplaats" class="skill-tools__image" data-i18n-attr="alt:skills.fabrication.printerAlt">
+              <img src="img/fabrication-laser-cutter.png" alt="Lasersnijder in de werkplaats" class="skill-tools__image" data-i18n-attr="alt:skills.fabrication.laserAlt">
             </figure>
           </div>
           <!-- Electronics -->
           <div class="skill-category reveal reveal-up" style="--delay: 0.1s">
             <h3 class="skill-category__title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-              Electronics & Code
+              <span data-i18n="skills.electronics.title">Elektronica & code</span>
             </h3>
             <div class="skill-list">
-              <div class="skill-item"><span>Arduino &amp; Microcontrollers</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>Sensor Integration</span><span class="skill-level skill-level--hands-on">Hands-on</span></div>
-              <div class="skill-item"><span>Circuit Design &amp; Soldering</span><span class="skill-level skill-level--hands-on">Hands-on</span></div>
+              <div class="skill-item"><span data-i18n="skills.electronics.arduino">Arduino &amp; microcontrollers</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.electronics.sensors">Sensorintegratie</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
+              <div class="skill-item"><span data-i18n="skills.electronics.circuits">Circuitontwerp &amp; solderen</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
             </div>
           </div>
           <!-- IT & Infrastructure -->
           <div class="skill-category reveal reveal-up" style="--delay: 0.2s">
             <h3 class="skill-category__title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              IT & Infrastructure
+              <span data-i18n="skills.infrastructure.title">IT & infrastructuur</span>
             </h3>
             <div class="skill-list">
-              <div class="skill-item"><span>Linux Administration</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>Server &amp; Homelab</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>Docker &amp; Networking</span><span class="skill-level skill-level--hands-on">Hands-on</span></div>
+              <div class="skill-item"><span data-i18n="skills.infrastructure.linux">Linux-beheer</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.infrastructure.homelab">Servers &amp; homelab</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.infrastructure.docker">Docker &amp; netwerken</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
             </div>
           </div>
           <!-- Making & Craft -->
           <div class="skill-category reveal reveal-up" style="--delay: 0.3s">
             <h3 class="skill-category__title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-              Making & Craft
+              <span data-i18n="skills.craft.title">Maken & ambacht</span>
             </h3>
             <div class="skill-list">
-              <div class="skill-item"><span>Woodworking</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>Construction &amp; Fabrication</span><span class="skill-level skill-level--hands-on">Hands-on</span></div>
-              <div class="skill-item"><span>VR Technologies</span><span class="skill-level skill-level--experienced">Experienced</span></div>
+              <div class="skill-item"><span data-i18n="skills.craft.wood">Houtbewerking</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.craft.construction">Constructie &amp; fabricage</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
+              <div class="skill-item"><span data-i18n="skills.craft.vr">VR-technologie</span><span class="skill-level skill-level--experienced" data-i18n="level.experienced">Ervaren</span></div>
             </div>
           </div>
           <!-- Operations & Business -->
           <div class="skill-category reveal reveal-up" style="--delay: 0.4s">
             <h3 class="skill-category__title">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M3 21h18"/><path d="M3 7h18"/><path d="M5 7v14"/><path d="M19 7v14"/><path d="M8 7V3h8v4"/><path d="M9 12h2"/><path d="M13 12h2"/><path d="M9 16h2"/><path d="M13 16h2"/></svg>
-              Operations & Business
+              <span data-i18n="skills.operations.title">Operatie & bedrijf</span>
             </h3>
             <div class="skill-list">
-              <div class="skill-item"><span>Hospitality Operations</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>Bookkeeping &amp; Administration</span><span class="skill-level skill-level--strong">Strong</span></div>
-              <div class="skill-item"><span>Guest Services</span><span class="skill-level skill-level--hands-on">Hands-on</span></div>
-              <div class="skill-item"><span>Financial Planning</span><span class="skill-level skill-level--hands-on">Hands-on</span></div>
+              <div class="skill-item"><span data-i18n="skills.operations.hospitality">Hospitality-operaties</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.operations.bookkeeping">Boekhouding &amp; administratie</span><span class="skill-level skill-level--strong" data-i18n="level.strong">Sterk</span></div>
+              <div class="skill-item"><span data-i18n="skills.operations.guests">Gastenservice</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
+              <div class="skill-item"><span data-i18n="skills.operations.finance">Financiele planning</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
             </div>
           </div>
         </div>
@@ -250,7 +254,7 @@
     <!-- Projects Section -->
     <section class="section" id="projects">
       <div class="section__header reveal reveal-up">
-        <h2 class="section__title">Projects</h2>
+        <h2 class="section__title" data-i18n="projects.title">Projecten</h2>
         <div class="section__title-line"></div>
       </div>
       <div class="section__body">
@@ -263,18 +267,18 @@
               </div>
               <span class="project-card__number">01</span>
             </div>
-            <h3 class="project-card__title">Custom Sim Racing Pedals</h3>
-            <p class="project-card__desc">Designed and fabricated custom load-cell brake pedals for sim racing. Owned the full lifecycle from CAD modeling and 3D printing to Arduino electronics, sensor calibration, and custom firmware.</p>
+            <h3 class="project-card__title" data-i18n="projects.pedals.title">Custom simracingpedalen</h3>
+            <p class="project-card__desc" data-i18n="projects.pedals.desc">Custom load-cell rempedalen voor simracing ontworpen en gebouwd. Het volledige traject gedaan: CAD-modellering, 3D-printen, Arduino-elektronica, sensorkalibratie en eigen firmware.</p>
             <figure class="project-card__media project-card__media--mosaic">
-              <img src="img/sim-pedals-full.jpg" alt="Complete custom sim racing pedal assembly" class="project-card__image project-card__image--wide">
-              <img src="img/sim-pedals-electronics.jpg" alt="Arduino electronics and custom 3D-printed enclosure for sim racing pedals" class="project-card__image">
-              <img src="img/sim-pedals-mechanics.jpg" alt="Spring and load-cell mechanism on custom sim racing pedals" class="project-card__image">
+              <img src="img/sim-pedals-full.jpg" alt="Complete custom simracingpedaalopstelling" class="project-card__image project-card__image--wide" data-i18n-attr="alt:projects.pedals.alt1">
+              <img src="img/sim-pedals-electronics.jpg" alt="Arduino-elektronica en custom 3D-geprinte behuizing voor simracingpedalen" class="project-card__image" data-i18n-attr="alt:projects.pedals.alt2">
+              <img src="img/sim-pedals-mechanics.jpg" alt="Veer- en load-cellmechanisme van custom simracingpedalen" class="project-card__image" data-i18n-attr="alt:projects.pedals.alt3">
             </figure>
             <div class="project-card__tags">
-              <span class="tag">3D Printing</span>
+              <span class="tag" data-i18n="tag.printing">3D-printen</span>
               <span class="tag">CAD</span>
               <span class="tag">Arduino</span>
-              <span class="tag">Electronics</span>
+              <span class="tag" data-i18n="tag.electronics">Elektronica</span>
             </div>
           </article>
 
@@ -285,16 +289,16 @@
               </div>
               <span class="project-card__number">02</span>
             </div>
-            <h3 class="project-card__title">Homelab Infrastructure</h3>
-            <p class="project-card__desc">Built and maintain server infrastructure across two locations with Proxmox virtualization, Docker-based services, backups, and monitoring. Self-hosted media, development, surveillance, personal web applications, and a Home Assistant-powered home.</p>
+            <h3 class="project-card__title" data-i18n="projects.homelab.title">Homelab-infrastructuur</h3>
+            <p class="project-card__desc" data-i18n="projects.homelab.desc">Serverinfrastructuur op twee locaties gebouwd en onderhouden met Proxmox-virtualisatie, Docker-services, backups en monitoring. Self-hosted media, development, surveillance, persoonlijke webapplicaties en een huis dat draait op Home Assistant.</p>
             <figure class="project-card__media">
-              <img src="img/homelab-proxmox.png" alt="Proxmox dashboard showing homelab virtual machines and containers" class="project-card__image">
+              <img src="img/homelab-proxmox.png" alt="Proxmox-dashboard met homelab-VM's en containers" class="project-card__image" data-i18n-attr="alt:projects.homelab.alt">
             </figure>
             <div class="project-card__tags">
               <span class="tag">Linux</span>
               <span class="tag">Docker</span>
-              <span class="tag">Networking</span>
-              <span class="tag">Self-hosting</span>
+              <span class="tag" data-i18n="tag.networking">Netwerken</span>
+              <span class="tag" data-i18n="tag.selfHosting">Self-hosting</span>
             </div>
           </article>
 
@@ -305,16 +309,16 @@
               </div>
               <span class="project-card__number">03</span>
             </div>
-            <h3 class="project-card__title">AI Surveillance System</h3>
-            <p class="project-card__desc">Deployed Frigate NVR with YOLOv5 AI-powered object detection for real-time security monitoring. Built a multi-camera setup with intelligent alerts, event recording, and networked storage across the homelab.</p>
+            <h3 class="project-card__title" data-i18n="projects.surveillance.title">AI-surveillancesysteem</h3>
+            <p class="project-card__desc" data-i18n="projects.surveillance.desc">Frigate NVR met YOLOv5 AI-objectdetectie opgezet voor real-time beveiligingsmonitoring. Een multi-camera setup gebouwd met slimme meldingen, event recording en netwerkopslag binnen het homelab.</p>
             <figure class="project-card__media">
-              <img src="img/ai-surveillance-nvr.png" alt="AI surveillance camera feed detecting a person at night" class="project-card__image">
+              <img src="img/ai-surveillance-nvr.png" alt="AI-camera feed die 's nachts een persoon detecteert" class="project-card__image" data-i18n-attr="alt:projects.surveillance.alt">
             </figure>
             <div class="project-card__tags">
               <span class="tag">AI / YOLOv5</span>
               <span class="tag">Frigate</span>
               <span class="tag">Linux</span>
-              <span class="tag">Networking</span>
+              <span class="tag" data-i18n="tag.networking">Netwerken</span>
             </div>
           </article>
 
@@ -326,14 +330,14 @@
               <span class="project-card__number">04</span>
             </div>
             <h3 class="project-card__title">bGrid Demo Kit</h3>
-            <p class="project-card__desc">Developed a portable demonstration kit for bGrid's indoor positioning and smart building technology. Created custom CAD prototypes using laser cutting and 3D printing so stakeholders could handle and test the concept directly.</p>
+            <p class="project-card__desc" data-i18n="projects.bgrid.desc">Een draagbare demonstratiekit ontwikkeld voor bGrid's indoor positioning en smart building technology. Custom CAD-prototypes gemaakt met lasersnijden en 3D-printen, zodat stakeholders het concept direct konden vasthouden en testen.</p>
             <figure class="project-card__media">
-              <img src="img/bgrid-demo.jpg" alt="bGrid demo kit with laser-cut enclosure and electronics" class="project-card__image">
+              <img src="img/bgrid-demo.jpg" alt="bGrid-demokit met lasergesneden behuizing en elektronica" class="project-card__image" data-i18n-attr="alt:projects.bgrid.alt">
             </figure>
             <div class="project-card__tags">
               <span class="tag">IoT</span>
-              <span class="tag">Electronics</span>
-              <span class="tag">Prototyping</span>
+              <span class="tag" data-i18n="tag.electronics">Elektronica</span>
+              <span class="tag" data-i18n="tag.prototyping">Prototyping</span>
             </div>
           </article>
 
@@ -344,17 +348,17 @@
               </div>
               <span class="project-card__number">05</span>
             </div>
-            <h3 class="project-card__title">Stress-Responsive Plant Watering</h3>
-            <p class="project-card__desc">Built an interactive plant watering prototype that reacted to electronically measured user stress levels. Combined Arduino sensing, custom code, 3D-printed housings, and physical prototyping to translate biometric input into a playful automated system.</p>
+            <h3 class="project-card__title" data-i18n="projects.plant.title">Stressgestuurde plantenbewatering</h3>
+            <p class="project-card__desc" data-i18n="projects.plant.desc">Een interactief plantenbewateringsprototype gebouwd dat reageerde op elektronisch gemeten stressniveaus van de gebruiker. Arduino-sensoren, eigen code, 3D-geprinte behuizingen en fysieke prototyping gecombineerd tot een speels geautomatiseerd systeem.</p>
             <figure class="project-card__media project-card__media--split">
-              <img src="img/stress-plant-01.jpg" alt="Stress-responsive plant watering prototype with Arduino electronics" class="project-card__image">
-              <img src="img/stress-plant-02.jpg" alt="Plant watering prototype with 3D-printed parts and plant" class="project-card__image">
+              <img src="img/stress-plant-01.jpg" alt="Stressgestuurd plantenbewateringsprototype met Arduino-elektronica" class="project-card__image" data-i18n-attr="alt:projects.plant.alt1">
+              <img src="img/stress-plant-02.jpg" alt="Plantenbewateringsprototype met 3D-geprinte onderdelen en plant" class="project-card__image" data-i18n-attr="alt:projects.plant.alt2">
             </figure>
             <div class="project-card__tags">
               <span class="tag">Arduino</span>
-              <span class="tag">3D Printing</span>
-              <span class="tag">Sensors</span>
-              <span class="tag">Prototyping</span>
+              <span class="tag" data-i18n="tag.printing">3D-printen</span>
+              <span class="tag" data-i18n="tag.sensors">Sensoren</span>
+              <span class="tag" data-i18n="tag.prototyping">Prototyping</span>
             </div>
           </article>
 
@@ -365,17 +369,17 @@
               </div>
               <span class="project-card__number">06</span>
             </div>
-            <h3 class="project-card__title">Woodworking & Construction</h3>
-            <p class="project-card__desc">Completed woodworking and construction projects ranging from custom furniture to larger structural builds. Combined planning, material selection, workshop setup, and hands-on fabrication with attention to finish and durability.</p>
+            <h3 class="project-card__title" data-i18n="projects.wood.title">Houtbewerking & constructie</h3>
+            <p class="project-card__desc" data-i18n="projects.wood.desc">Houtbewerkings- en constructieprojecten uitgevoerd, van custom meubels tot grotere structurele builds. Planning, materiaalkeuze, werkplaatsinrichting en hands-on fabricage gecombineerd met aandacht voor afwerking en duurzaamheid.</p>
             <figure class="project-card__media project-card__media--triptych">
-              <img src="img/wood-workshop.jpg" alt="Finished woodworking workshop with benches and tools" class="project-card__image">
-              <img src="img/wood-shed.jpg" alt="Timber shed and covered outdoor structure under construction" class="project-card__image">
-              <img src="img/wood-table-finish.jpg" alt="Finishing a custom live-edge wooden table" class="project-card__image">
+              <img src="img/wood-workshop.jpg" alt="Afgewerkte houtwerkplaats met werkbanken en gereedschap" class="project-card__image" data-i18n-attr="alt:projects.wood.alt1">
+              <img src="img/wood-shed.jpg" alt="Houten schuur en overkapping tijdens de bouw" class="project-card__image" data-i18n-attr="alt:projects.wood.alt2">
+              <img src="img/wood-table-finish.jpg" alt="Afwerking van een custom houten live-edge tafel" class="project-card__image" data-i18n-attr="alt:projects.wood.alt3">
             </figure>
             <div class="project-card__tags">
-              <span class="tag">Woodworking</span>
-              <span class="tag">Design</span>
-              <span class="tag">Fabrication</span>
+              <span class="tag" data-i18n="tag.woodworking">Houtbewerking</span>
+              <span class="tag" data-i18n="tag.design">Ontwerp</span>
+              <span class="tag" data-i18n="tag.fabrication">Fabricage</span>
             </div>
           </article>
 
@@ -386,7 +390,7 @@
     <!-- Experience Section -->
     <section class="section" id="experience">
       <div class="section__header reveal reveal-up">
-        <h2 class="section__title">Experience</h2>
+        <h2 class="section__title" data-i18n="experience.title">Ervaring</h2>
         <div class="section__title-line"></div>
       </div>
       <div class="section__body">
@@ -397,14 +401,14 @@
           <div class="timeline__item reveal reveal-up">
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__date">Approx. 2 years</span>
-              <h3 class="timeline__title">Restaurant & Airbnb Operations</h3>
-              <span class="timeline__company">Family Business</span>
+              <span class="timeline__date" data-i18n="experience.restaurant.date">Ongeveer 2 jaar</span>
+              <h3 class="timeline__title" data-i18n="experience.restaurant.title">Restaurant- & Airbnb-operaties</h3>
+              <span class="timeline__company" data-i18n="experience.restaurant.company">Familiebedrijf</span>
               <ul class="timeline__details">
-                <li>Managed full administration and bookkeeping</li>
-                <li>Designed and installed complete digital infrastructure</li>
-                <li>Coordinated guest services and hospitality operations</li>
-                <li>Assisted with food service and kitchen operations</li>
+                <li data-i18n="experience.restaurant.li1">Volledige administratie en boekhouding beheerd</li>
+                <li data-i18n="experience.restaurant.li2">Complete digitale infrastructuur ontworpen en geinstalleerd</li>
+                <li data-i18n="experience.restaurant.li3">Gastenservice en hospitality-operaties gecoordineerd</li>
+                <li data-i18n="experience.restaurant.li4">Ondersteund bij bediening en keukenwerkzaamheden</li>
               </ul>
             </div>
           </div>
@@ -412,13 +416,13 @@
           <div class="timeline__item reveal reveal-up" style="--delay: 0.15s">
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__date">Ongoing</span>
-              <h3 class="timeline__title">IT Support & Electronics Trading</h3>
-              <span class="timeline__company">Independent</span>
+              <span class="timeline__date" data-i18n="experience.it.date">Doorlopend</span>
+              <h3 class="timeline__title" data-i18n="experience.it.title">IT-support & elektronicahandel</h3>
+              <span class="timeline__company" data-i18n="experience.it.company">Zelfstandig</span>
               <ul class="timeline__details">
-                <li>Provided paid hardware, networking, and software support</li>
-                <li>Explained technical issues clearly for non-technical users</li>
-                <li>Bought, sold, configured, and repaired electronics</li>
+                <li data-i18n="experience.it.li1">Betaalde hardware-, netwerk- en softwaresupport geleverd</li>
+                <li data-i18n="experience.it.li2">Technische problemen duidelijk uitgelegd aan niet-technische gebruikers</li>
+                <li data-i18n="experience.it.li3">Elektronica gekocht, verkocht, geconfigureerd en gerepareerd</li>
               </ul>
             </div>
           </div>
@@ -426,13 +430,13 @@
           <div class="timeline__item reveal reveal-up" style="--delay: 0.3s">
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__date">Summer 2022</span>
-              <h3 class="timeline__title">Agricultural Work</h3>
-              <span class="timeline__company">Farm</span>
+              <span class="timeline__date" data-i18n="experience.farm.date">Zomer 2022</span>
+              <h3 class="timeline__title" data-i18n="experience.farm.title">Agrarisch werk</h3>
+              <span class="timeline__company" data-i18n="experience.farm.company">Boerderij</span>
               <ul class="timeline__details">
-                <li>High-intensity physical labor across long working days</li>
-                <li>Equipment operation and maintenance</li>
-                <li>Developed strong work ethic and resilience</li>
+                <li data-i18n="experience.farm.li1">Fysiek zwaar werk tijdens lange werkdagen</li>
+                <li data-i18n="experience.farm.li2">Bediening en onderhoud van apparatuur</li>
+                <li data-i18n="experience.farm.li3">Sterke werkhouding en doorzettingsvermogen ontwikkeld</li>
               </ul>
             </div>
           </div>
@@ -440,7 +444,7 @@
 
         <!-- Education sub-section -->
         <div class="section__subheader reveal reveal-up" style="--delay: 0.2s">
-          <h2 class="section__title section__title--sub">Education</h2>
+          <h2 class="section__title section__title--sub" data-i18n="education.title">Opleiding</h2>
           <div class="section__title-line"></div>
         </div>
 
@@ -450,9 +454,9 @@
           <div class="timeline__item reveal reveal-up" style="--delay: 0.25s">
             <div class="timeline__dot timeline__dot--education"></div>
             <div class="timeline__card">
-              <span class="timeline__date">2025 - 2028 expected</span>
-              <h3 class="timeline__title">Bachelor of Business Administration</h3>
-              <span class="timeline__company">University of Groningen</span>
+              <span class="timeline__date" data-i18n="education.rug.date">2025 - 2028 verwacht</span>
+              <h3 class="timeline__title" data-i18n="education.rug.title">Bachelor Bedrijfskunde</h3>
+              <span class="timeline__company" data-i18n="education.rug.school">Rijksuniversiteit Groningen</span>
             </div>
           </div>
 
@@ -460,16 +464,16 @@
             <div class="timeline__dot timeline__dot--education"></div>
             <div class="timeline__card">
               <span class="timeline__date">2024 - 2025</span>
-              <h3 class="timeline__title">Creative Technology</h3>
-              <span class="timeline__company">University of Twente</span>
+              <h3 class="timeline__title" data-i18n="education.ut.title">Creative Technology</h3>
+              <span class="timeline__company" data-i18n="education.ut.school">Universiteit Twente</span>
             </div>
           </div>
 
           <div class="timeline__item reveal reveal-up" style="--delay: 0.45s">
             <div class="timeline__dot timeline__dot--education"></div>
             <div class="timeline__card">
-              <span class="timeline__date">Diploma 2022</span>
-              <h3 class="timeline__title">VWO N&amp;T, Economics &amp; Informatics</h3>
+              <span class="timeline__date" data-i18n="education.vwo.date">Diploma 2022</span>
+              <h3 class="timeline__title" data-i18n="education.vwo.title">VWO N&amp;T, Economie &amp; Informatica</h3>
               <span class="timeline__company">Vitus College, Bussum</span>
             </div>
           </div>
@@ -481,24 +485,24 @@
     <!-- Contact Section -->
     <section class="section" id="contact">
       <div class="section__header reveal reveal-up">
-        <h2 class="section__title">Get In Touch</h2>
+        <h2 class="section__title" data-i18n="contact.title">Neem contact op</h2>
         <div class="section__title-line"></div>
       </div>
       <div class="section__body">
         <div class="contact-content reveal reveal-up">
-          <p class="contact-text">Interested in practical technical work, a hands-on project, or an internship conversation? I am open to opportunities where building, operations, and problem-solving meet.</p>
+          <p class="contact-text" data-i18n="contact.text">Interesse in praktisch technisch werk, een hands-on project of een gesprek over een stage? Ik sta open voor kansen waar bouwen, bedrijfsvoering en probleemoplossing samenkomen.</p>
           <div class="contact-actions">
             <a href="mailto:me@apollof.nl" class="contact-btn contact-btn--primary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-              <span>Send an Email</span>
+              <span data-i18n="contact.emailButton">Stuur een e-mail</span>
             </a>
             <a href="https://www.linkedin.com/in/florian-greeven-808571245/" target="_blank" rel="noopener" class="contact-btn contact-btn--secondary">
               <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              <span>LinkedIn Profile</span>
+              <span data-i18n="contact.linkedinButton">LinkedIn-profiel</span>
             </a>
-            <a href="docs/CV_Florian_Greeven.pdf" target="_blank" rel="noopener" class="contact-btn contact-btn--secondary">
+            <a href="docs/CV_Florian_Greeven_Webversion.pdf" target="_blank" rel="noopener" class="contact-btn contact-btn--secondary">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg>
-              <span>View CV</span>
+              <span data-i18n="cta.cv">Bekijk CV</span>
             </a>
           </div>
         </div>
@@ -506,7 +510,7 @@
     </section>
 
     <footer class="footer">
-      <p>&copy; 2026 Florian Greeven. All rights reserved.</p>
+      <p data-i18n="footer.rights">&copy; 2026 Florian Greeven. Alle rechten voorbehouden.</p>
     </footer>
 
   </main>
