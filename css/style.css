@@ -169,9 +169,16 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
   transition: var(--transition); margin-top: auto;
 }
+.sidebar__cta + .sidebar__cta { margin-top: 10px; }
 .sidebar__cta:hover {
   background: var(--accent); color: var(--bg-primary); transform: translateY(-2px);
   box-shadow: 0 6px 24px var(--accent-glow);
+}
+.sidebar__cta--secondary {
+  border-color: var(--border-hover); color: var(--text-secondary);
+}
+.sidebar__cta--secondary:hover {
+  border-color: var(--accent); color: var(--bg-primary);
 }
 
 /* Sidebar Decor Lines */
