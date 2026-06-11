@@ -571,7 +571,8 @@ function initImageLightbox() {
 
   function openImage(img) {
     lastFocused = document.activeElement;
-    lightboxImage.src = img.currentSrc || img.src;
+    // Prefer the largest asset for zoom; the grid may have picked a small candidate
+    lightboxImage.src = img.dataset.full || img.currentSrc || img.src;
     lightboxImage.alt = img.alt || translate('lightbox.image');
     caption.textContent = img.alt || '';
     lightbox.classList.add('active');

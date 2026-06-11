@@ -10,9 +10,8 @@
   <meta property="og:description" content="Portfolio van Florian Greeven - 3D-printen, CAD-ontwerp, elektronica, infrastructuur en praktische fabricage.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://portfolio.apollof.nl">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/outfit-v15-latin-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css?v=20260525">
   <noscript>
     <style>
@@ -37,14 +36,21 @@
   <!-- Sidebar / vCard -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__bg">
-      <img src="img/hero-bg.png" alt="" class="sidebar__bg-img">
+      <picture>
+        <source type="image/webp" srcset="img/hero-bg-640.webp">
+        <img src="img/hero-bg-640.png" width="640" height="640" alt="" decoding="async" class="sidebar__bg-img">
+      </picture>
       <div class="sidebar__bg-overlay"></div>
     </div>
 
     <div class="sidebar__content">
       <div class="sidebar__profile">
         <div class="profile-photo-wrapper">
-          <img src="img/profile-photo.jpeg" alt="Florian Greeven" class="profile-photo" id="profilePhoto">
+          <picture>
+            <source type="image/webp" srcset="img/profile-photo-240.webp">
+            <img src="img/profile-photo-240.jpg" width="240" height="300" alt="Florian Greeven"
+                 fetchpriority="high" data-full="img/profile-photo.jpeg" class="profile-photo" id="profilePhoto">
+          </picture>
           <div class="profile-photo-ring"></div>
         </div>
         <h1 class="profile-name">Florian Greeven</h1>
@@ -199,8 +205,14 @@
               <div class="skill-item"><span data-i18n="skills.fabrication.laser">Lasersnijden</span><span class="skill-level skill-level--hands-on" data-i18n="level.handsOn">Praktisch</span></div>
             </div>
             <figure class="skill-tools">
-              <img src="img/fabrication-3d-printer.jpg" alt="3D-printer in de werkplaats" class="skill-tools__image" data-i18n-attr="alt:skills.fabrication.printerAlt">
-              <img src="img/fabrication-laser-cutter.png" alt="Lasersnijder in de werkplaats" class="skill-tools__image" data-i18n-attr="alt:skills.fabrication.laserAlt">
+              <picture>
+                <source type="image/webp" srcset="img/fabrication-3d-printer-800.webp 800w, img/fabrication-3d-printer-1600.webp 1152w" sizes="(max-width: 768px) 45vw, (max-width: 1280px) 22vw, 15vw">
+                <img src="img/fabrication-3d-printer-800.jpg" width="800" height="1422" loading="lazy" decoding="async" data-full="img/fabrication-3d-printer-1600.webp" alt="3D-printer in de werkplaats" class="skill-tools__image" data-i18n-attr="alt:skills.fabrication.printerAlt">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="img/fabrication-laser-cutter-800.webp 800w, img/fabrication-laser-cutter-1600.webp 1600w" sizes="(max-width: 768px) 45vw, (max-width: 1280px) 22vw, 15vw">
+                <img src="img/fabrication-laser-cutter-800.jpg" width="800" height="541" loading="lazy" decoding="async" data-full="img/fabrication-laser-cutter-1600.webp" alt="Lasersnijder in de werkplaats" class="skill-tools__image" data-i18n-attr="alt:skills.fabrication.laserAlt">
+              </picture>
             </figure>
           </div>
           <!-- Electronics -->
@@ -275,9 +287,18 @@
             <h3 class="project-card__title" data-i18n="projects.pedals.title">Custom simracingpedalen</h3>
             <p class="project-card__desc" data-i18n="projects.pedals.desc">Custom load-cell rempedalen voor simracing ontworpen en gebouwd. Het volledige traject gedaan: CAD-modellering, 3D-printen, Arduino-elektronica, sensorkalibratie en eigen firmware.</p>
             <figure class="project-card__media project-card__media--mosaic">
-              <img src="img/sim-pedals-full.jpg" alt="Complete custom simracingpedaalopstelling" class="project-card__image project-card__image--wide" data-i18n-attr="alt:projects.pedals.alt1">
-              <img src="img/sim-pedals-electronics.jpg" alt="Arduino-elektronica en custom 3D-geprinte behuizing voor simracingpedalen" class="project-card__image" data-i18n-attr="alt:projects.pedals.alt2">
-              <img src="img/sim-pedals-mechanics.jpg" alt="Veer- en load-cellmechanisme van custom simracingpedalen" class="project-card__image" data-i18n-attr="alt:projects.pedals.alt3">
+              <picture>
+                <source type="image/webp" srcset="img/sim-pedals-full-800.webp 800w, img/sim-pedals-full-1600.webp 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1280px) 44vw, 30vw">
+                <img src="img/sim-pedals-full-800.jpg" width="800" height="600" loading="lazy" decoding="async" data-full="img/sim-pedals-full-1600.webp" alt="Complete custom simracingpedaalopstelling" class="project-card__image project-card__image--wide" data-i18n-attr="alt:projects.pedals.alt1">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="img/sim-pedals-electronics-800.webp 800w, img/sim-pedals-electronics-1600.webp 1600w" sizes="(max-width: 768px) 45vw, (max-width: 1280px) 22vw, 15vw">
+                <img src="img/sim-pedals-electronics-800.jpg" width="800" height="1067" loading="lazy" decoding="async" data-full="img/sim-pedals-electronics-1600.webp" alt="Arduino-elektronica en custom 3D-geprinte behuizing voor simracingpedalen" class="project-card__image" data-i18n-attr="alt:projects.pedals.alt2">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="img/sim-pedals-mechanics-800.webp 800w, img/sim-pedals-mechanics-1600.webp 1600w" sizes="(max-width: 768px) 45vw, (max-width: 1280px) 22vw, 15vw">
+                <img src="img/sim-pedals-mechanics-800.jpg" width="800" height="1067" loading="lazy" decoding="async" data-full="img/sim-pedals-mechanics-1600.webp" alt="Veer- en load-cellmechanisme van custom simracingpedalen" class="project-card__image" data-i18n-attr="alt:projects.pedals.alt3">
+              </picture>
             </figure>
             <div class="project-card__tags">
               <span class="tag" data-i18n="tag.printing">3D-printen</span>
@@ -297,7 +318,10 @@
             <h3 class="project-card__title" data-i18n="projects.homelab.title">Homelab-infrastructuur</h3>
             <p class="project-card__desc" data-i18n="projects.homelab.desc">Serverinfrastructuur op twee locaties gebouwd en onderhouden met Proxmox-virtualisatie, Docker-services, backups en monitoring. Self-hosted media, development, surveillance, persoonlijke webapplicaties en een huis dat draait op Home Assistant.</p>
             <figure class="project-card__media">
-              <img src="img/homelab-proxmox.png" alt="Proxmox-dashboard met homelab-VM's en containers" class="project-card__image" data-i18n-attr="alt:projects.homelab.alt">
+              <picture>
+                <source type="image/webp" srcset="img/homelab-proxmox-800.webp 800w, img/homelab-proxmox-1600.webp 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1280px) 44vw, 30vw">
+                <img src="img/homelab-proxmox-800.png" width="800" height="359" loading="lazy" decoding="async" data-full="img/homelab-proxmox-1600.webp" alt="Proxmox-dashboard met homelab-VM's en containers" class="project-card__image" data-i18n-attr="alt:projects.homelab.alt">
+              </picture>
             </figure>
             <div class="project-card__tags">
               <span class="tag">Linux</span>
@@ -317,7 +341,10 @@
             <h3 class="project-card__title" data-i18n="projects.surveillance.title">AI-surveillancesysteem</h3>
             <p class="project-card__desc" data-i18n="projects.surveillance.desc">Frigate NVR met YOLOv5 AI-objectdetectie opgezet voor real-time beveiligingsmonitoring. Een multi-camera setup gebouwd met slimme meldingen, event recording en netwerkopslag binnen het homelab.</p>
             <figure class="project-card__media">
-              <img src="img/ai-surveillance-nvr.png" alt="AI-camera feed die 's nachts een persoon detecteert" class="project-card__image" data-i18n-attr="alt:projects.surveillance.alt">
+              <picture>
+                <source type="image/webp" srcset="img/ai-surveillance-nvr-800.webp 800w, img/ai-surveillance-nvr-1600.webp 1275w" sizes="(max-width: 768px) 92vw, (max-width: 1280px) 44vw, 30vw">
+                <img src="img/ai-surveillance-nvr-800.png" width="800" height="596" loading="lazy" decoding="async" data-full="img/ai-surveillance-nvr-1600.webp" alt="AI-camera feed die 's nachts een persoon detecteert" class="project-card__image" data-i18n-attr="alt:projects.surveillance.alt">
+              </picture>
             </figure>
             <div class="project-card__tags">
               <span class="tag">AI / YOLOv5</span>
@@ -337,7 +364,10 @@
             <h3 class="project-card__title">bGrid Demo Kit</h3>
             <p class="project-card__desc" data-i18n="projects.bgrid.desc">Een draagbare demonstratiekit ontwikkeld voor bGrid's indoor positioning en smart building technology. Custom CAD-prototypes gemaakt met lasersnijden en 3D-printen, zodat stakeholders het concept direct konden vasthouden en testen.</p>
             <figure class="project-card__media">
-              <img src="img/bgrid-demo.jpg" alt="bGrid-demokit met lasergesneden behuizing en elektronica" class="project-card__image" data-i18n-attr="alt:projects.bgrid.alt">
+              <picture>
+                <source type="image/webp" srcset="img/bgrid-demo-800.webp 800w, img/bgrid-demo-1600.webp 1200w" sizes="(max-width: 768px) 92vw, (max-width: 1280px) 44vw, 30vw">
+                <img src="img/bgrid-demo-800.jpg" width="800" height="1067" loading="lazy" decoding="async" data-full="img/bgrid-demo-1600.webp" alt="bGrid-demokit met lasergesneden behuizing en elektronica" class="project-card__image" data-i18n-attr="alt:projects.bgrid.alt">
+              </picture>
             </figure>
             <div class="project-card__tags">
               <span class="tag">IoT</span>
@@ -356,8 +386,14 @@
             <h3 class="project-card__title" data-i18n="projects.plant.title">Stressgestuurde plantenbewatering</h3>
             <p class="project-card__desc" data-i18n="projects.plant.desc">Een interactief plantenbewateringsprototype gebouwd dat reageerde op elektronisch gemeten stressniveaus van de gebruiker. Arduino-sensoren, eigen code, 3D-geprinte behuizingen en fysieke prototyping gecombineerd tot een speels geautomatiseerd systeem.</p>
             <figure class="project-card__media project-card__media--split">
-              <img src="img/stress-plant-01.jpg" alt="Stressgestuurd plantenbewateringsprototype met Arduino-elektronica" class="project-card__image" data-i18n-attr="alt:projects.plant.alt1">
-              <img src="img/stress-plant-02.jpg" alt="Plantenbewateringsprototype met 3D-geprinte onderdelen en plant" class="project-card__image" data-i18n-attr="alt:projects.plant.alt2">
+              <picture>
+                <source type="image/webp" srcset="img/stress-plant-01-800.webp 800w, img/stress-plant-01-1600.webp 1600w" sizes="(max-width: 768px) 45vw, (max-width: 1280px) 22vw, 15vw">
+                <img src="img/stress-plant-01-800.jpg" width="800" height="1067" loading="lazy" decoding="async" data-full="img/stress-plant-01-1600.webp" alt="Stressgestuurd plantenbewateringsprototype met Arduino-elektronica" class="project-card__image" data-i18n-attr="alt:projects.plant.alt1">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="img/stress-plant-02-800.webp 800w, img/stress-plant-02-1600.webp 1600w" sizes="(max-width: 768px) 45vw, (max-width: 1280px) 22vw, 15vw">
+                <img src="img/stress-plant-02-800.jpg" width="800" height="1067" loading="lazy" decoding="async" data-full="img/stress-plant-02-1600.webp" alt="Plantenbewateringsprototype met 3D-geprinte onderdelen en plant" class="project-card__image" data-i18n-attr="alt:projects.plant.alt2">
+              </picture>
             </figure>
             <div class="project-card__tags">
               <span class="tag">Arduino</span>
@@ -377,9 +413,18 @@
             <h3 class="project-card__title" data-i18n="projects.wood.title">Houtbewerking & constructie</h3>
             <p class="project-card__desc" data-i18n="projects.wood.desc">Houtbewerkings- en constructieprojecten uitgevoerd, van custom meubels tot grotere structurele builds. Planning, materiaalkeuze, werkplaatsinrichting en hands-on fabricage gecombineerd met aandacht voor afwerking en duurzaamheid.</p>
             <figure class="project-card__media project-card__media--triptych">
-              <img src="img/wood-workshop.jpg" alt="Afgewerkte houtwerkplaats met werkbanken en gereedschap" class="project-card__image" data-i18n-attr="alt:projects.wood.alt1">
-              <img src="img/wood-shed.jpg" alt="Houten schuur en overkapping tijdens de bouw" class="project-card__image" data-i18n-attr="alt:projects.wood.alt2">
-              <img src="img/wood-table-finish.jpg" alt="Afwerking van een custom houten live-edge tafel" class="project-card__image" data-i18n-attr="alt:projects.wood.alt3">
+              <picture>
+                <source type="image/webp" srcset="img/wood-workshop-800.webp 800w, img/wood-workshop-1600.webp 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1280px) 15vw, 10vw">
+                <img src="img/wood-workshop-800.jpg" width="800" height="600" loading="lazy" decoding="async" data-full="img/wood-workshop-1600.webp" alt="Afgewerkte houtwerkplaats met werkbanken en gereedschap" class="project-card__image" data-i18n-attr="alt:projects.wood.alt1">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="img/wood-shed-800.webp 800w, img/wood-shed-1600.webp 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1280px) 15vw, 10vw">
+                <img src="img/wood-shed-800.jpg" width="800" height="600" loading="lazy" decoding="async" data-full="img/wood-shed-1600.webp" alt="Houten schuur en overkapping tijdens de bouw" class="project-card__image" data-i18n-attr="alt:projects.wood.alt2">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="img/wood-table-finish-800.webp 800w, img/wood-table-finish-1600.webp 1600w" sizes="(max-width: 768px) 92vw, (max-width: 1280px) 15vw, 10vw">
+                <img src="img/wood-table-finish-800.jpg" width="800" height="600" loading="lazy" decoding="async" data-full="img/wood-table-finish-1600.webp" alt="Afwerking van een custom houten live-edge tafel" class="project-card__image" data-i18n-attr="alt:projects.wood.alt3">
+              </picture>
             </figure>
             <div class="project-card__tags">
               <span class="tag" data-i18n="tag.woodworking">Houtbewerking</span>
