@@ -326,6 +326,8 @@ function setLanguage(lang, options = {}) {
   setMetaContent('description', translate('meta.description'));
   setMetaProperty('og:title', translate('meta.title'));
   setMetaProperty('og:description', translate('meta.ogDescription'));
+  setMetaContent('twitter:title', translate('meta.title'));
+  setMetaContent('twitter:description', translate('meta.ogDescription'));
 
   document.querySelectorAll('[data-i18n]').forEach(element => {
     element.textContent = translate(element.getAttribute('data-i18n'));
