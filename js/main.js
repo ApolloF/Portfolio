@@ -456,24 +456,46 @@ function initNavigation() {
   const sections = document.querySelectorAll('.section');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          const isActive = link.getAttribute('data-section') === id;
-          link.classList.toggle('active', isActive);
-          if (isActive) {
-            link.setAttribute('aria-current', 'true');
-          } else {
-            link.removeAttribute('aria-current');
-          }
-        });
+  function setActive(id) {
+    navLinks.forEach(link => {
+      const isActive = link.getAttribute('data-section') === id;
+      link.classList.toggle('active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
       }
     });
-  }, { threshold: 0.2, rootMargin: '-20% 0px -60% 0px' });
+  }
 
-  sections.forEach(s => observer.observe(s));
+  // "Current" is the last section whose top sits above a line at 40% of the
+  // viewport. An IntersectionObserver ratio threshold can never fire for
+  // sections taller than the viewport, and the short last section never
+  // reaches the line at all, so compute it directly per scroll frame.
+  const sectionList = Array.from(sections);
+  let ticking = false;
+
+  function updateActive() {
+    ticking = false;
+    if (!sectionList.length) return;
+    const line = window.innerHeight * 0.4;
+    let currentId = sectionList[0].id;
+    sectionList.forEach(section => {
+      if (section.getBoundingClientRect().top <= line) currentId = section.id;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      currentId = sectionList[sectionList.length - 1].id;
+    }
+    setActive(currentId);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateActive);
+    }
+  }, { passive: true });
+  updateActive();
 
   // Smooth scroll on nav click
   navLinks.forEach(link => {
