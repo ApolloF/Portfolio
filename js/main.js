@@ -2,6 +2,7 @@
 
 const DEFAULT_LANGUAGE = 'nl';
 const LANGUAGE_STORAGE_KEY = 'portfolio-language';
+const REDUCED_MOTION_QUERY = window.matchMedia('(prefers-reduced-motion: reduce)');
 let activeLanguage = DEFAULT_LANGUAGE;
 let typingTimer = null;
 
@@ -17,6 +18,7 @@ const TRANSLATIONS = {
     'meta.ogDescription': 'Portfolio van Florian Greeven - 3D-printen, CAD-ontwerp, elektronica, infrastructuur en praktische fabricage.',
     'menu.toggle': 'Menu openen',
     'language.group': 'Taal kiezen',
+    'skip.toContent': 'Direct naar inhoud',
     'nav.about': 'Over mij',
     'nav.skills': 'Vaardigheden',
     'nav.projects': 'Projecten',
@@ -148,6 +150,7 @@ const TRANSLATIONS = {
     'meta.ogDescription': 'Portfolio of Florian Greeven - 3D printing, CAD design, electronics, infrastructure, and hands-on fabrication.',
     'menu.toggle': 'Toggle menu',
     'language.group': 'Choose language',
+    'skip.toContent': 'Skip to content',
     'nav.about': 'About',
     'nav.skills': 'Capabilities',
     'nav.projects': 'Projects',
@@ -381,6 +384,7 @@ function refreshLightboxLabels() {
 /* ===== Typing Effect ===== */
 function initTypingEffect() {
   restartTypingEffect();
+  REDUCED_MOTION_QUERY.addEventListener('change', restartTypingEffect);
 }
 
 function restartTypingEffect() {
@@ -389,6 +393,12 @@ function restartTypingEffect() {
 
   if (typingTimer) window.clearTimeout(typingTimer);
   const phrases = TYPING_PHRASES[activeLanguage] || TYPING_PHRASES[DEFAULT_LANGUAGE];
+
+  if (REDUCED_MOTION_QUERY.matches) {
+    el.textContent = phrases[0];
+    return;
+  }
+
   el.textContent = '';
 
   let phraseIdx = 0, charIdx = 0, isDeleting = false;
@@ -465,10 +475,13 @@ function initNavigation() {
       e.preventDefault();
       const target = document.getElementById(link.getAttribute('data-section'));
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const behavior = REDUCED_MOTION_QUERY.matches ? 'auto' : 'smooth';
+        target.scrollIntoView({ behavior, block: 'start' });
         // Close mobile menu
         document.getElementById('sidebar')?.classList.remove('open');
-        document.getElementById('menuToggle')?.classList.remove('active');
+        const menuToggle = document.getElementById('menuToggle');
+        menuToggle?.classList.remove('active');
+        menuToggle?.setAttribute('aria-expanded', 'false');
         document.querySelector('.sidebar-backdrop')?.classList.remove('active');
       }
     });
@@ -486,14 +499,50 @@ function initMobileMenu() {
   backdrop.className = 'sidebar-backdrop';
   document.body.appendChild(backdrop);
 
-  function toggleMenu() {
-    sidebar.classList.toggle('open');
-    toggle.classList.toggle('active');
-    backdrop.classList.toggle('active');
+  const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  function isOpen() {
+    return sidebar.classList.contains('open');
   }
 
-  toggle.addEventListener('click', toggleMenu);
-  backdrop.addEventListener('click', toggleMenu);
+  function setMenu(open) {
+    sidebar.classList.toggle('open', open);
+    toggle.classList.toggle('active', open);
+    backdrop.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      sidebar.querySelector(FOCUSABLE)?.focus();
+    } else {
+      toggle.focus();
+    }
+  }
+
+  toggle.addEventListener('click', () => setMenu(!isOpen()));
+  backdrop.addEventListener('click', () => setMenu(false));
+
+  // While the menu overlays the page, keep keyboard focus inside it
+  document.addEventListener('keydown', (event) => {
+    if (!isOpen() || !window.matchMedia('(max-width: 768px)').matches) return;
+
+    if (event.key === 'Escape') {
+      setMenu(false);
+      return;
+    }
+    if (event.key !== 'Tab') return;
+
+    const focusables = Array.from(sidebar.querySelectorAll(FOCUSABLE));
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 }
 
 /* ===== Image Lightbox ===== */
@@ -556,6 +605,12 @@ function initImageLightbox() {
   closeBtn.addEventListener('click', closeImage);
   lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) closeImage();
+  });
+  // The close button is the dialog's only focusable control; keep Tab inside
+  lightbox.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') return;
+    event.preventDefault();
+    closeBtn.focus();
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && lightbox.classList.contains('active')) {
