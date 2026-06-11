@@ -280,7 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initScrollReveal();
   initNavigation();
-  initCustomCursor();
   initMobileMenu();
   initImageLightbox();
 });
@@ -446,7 +445,13 @@ function initNavigation() {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
         navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('data-section') === id);
+          const isActive = link.getAttribute('data-section') === id;
+          link.classList.toggle('active', isActive);
+          if (isActive) {
+            link.setAttribute('aria-current', 'true');
+          } else {
+            link.removeAttribute('aria-current');
+          }
         });
       }
     });
@@ -466,50 +471,6 @@ function initNavigation() {
         document.getElementById('menuToggle')?.classList.remove('active');
         document.querySelector('.sidebar-backdrop')?.classList.remove('active');
       }
-    });
-  });
-}
-
-/* ===== Custom Cursor ===== */
-function initCustomCursor() {
-  const cursor = document.getElementById('cursor');
-  const follower = document.getElementById('cursorFollower');
-  if (!cursor || !follower) return;
-
-  // Check if touch device
-  if ('ontouchstart' in window) {
-    cursor.style.display = 'none';
-    follower.style.display = 'none';
-    return;
-  }
-
-  let mx = 0, my = 0, fx = 0, fy = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
-  });
-
-  function animateFollower() {
-    fx += (mx - fx) * 0.12;
-    fy += (my - fy) * 0.12;
-    follower.style.left = fx + 'px';
-    follower.style.top = fy + 'px';
-    requestAnimationFrame(animateFollower);
-  }
-  animateFollower();
-
-  // Hover effect on interactive elements
-  const hoverTargets = document.querySelectorAll('a, button, .project-card, .detail-card, .skill-category, .project-card__image, .skill-tools__image, .profile-photo');
-  hoverTargets.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('hovering');
-      follower.classList.add('hovering');
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hovering');
-      follower.classList.remove('hovering');
     });
   });
 }
